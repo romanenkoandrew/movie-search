@@ -1,0 +1,28 @@
+// html {
+//   font-size: 10px;
+// }
+* {
+  font-family: 'Caveat' ,Arial, Helvetica, sans-serif;
+}
+.input-group-append {
+  i {
+    cursor: pointer;
+    &:hover {
+      color: #212529
+    }
+  }
+}
+
+@media (max-width: 576px) { 
+  .input-group {
+    width: 100% !important;
+  }
+  .form-control {
+    border-left: 1px solid #6c757d !important;
+    border-bottom-left-radius: 0.25rem !important; 
+    border-top-left-radius: 0.25rem !important;
+  }
+
+ }
+
+
