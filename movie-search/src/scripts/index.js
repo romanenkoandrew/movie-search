@@ -1,1 +1,5 @@
-console.log('Working')
+import mySwiper from './swiper'
+
+document.addEventListener('DOMContentLoaded', () => {
+  mySwiper()
+})
