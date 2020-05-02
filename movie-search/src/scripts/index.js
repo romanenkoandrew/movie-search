@@ -1,5 +1,5 @@
 import mySwiper from './swiper'
 
 document.addEventListener('DOMContentLoaded', () => {
-  mySwiper()
+  mySwiper.init()
 })

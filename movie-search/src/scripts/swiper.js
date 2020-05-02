@@ -1,8 +1,8 @@
 import Swiper from 'swiper'
 
 const mySwiper = new Swiper('.swiper-container', {
-  slidesPerView: 3,
-  spaceBetween: 30,
+  slidesPerView: 1,
+  spaceBetween: 5,
   loop: true,
   keyboard: {
     enabled: true
@@ -14,6 +14,14 @@ const mySwiper = new Swiper('.swiper-container', {
   navigation: {
     nextEl: '.swiper-button-next',
     prevEl: '.swiper-button-prev'
+  },
+  breakpoints: {
+    700: {
+      slidesPerView: 2
+    },
+    1000: {
+      slidesPerView: 3
+    }
   }
 })
 

@@ -13,10 +13,12 @@ module.exports = {
     new HTMLWebpackPlugin({
       template: './index.html'
     }),
-    new CopyPlugin([{
-      from: './src/assets',
-      to: './assets'
-    }])
+    new CopyPlugin([
+      {
+        from: './src/assets',
+        to: './assets'
+      }
+    ])
   ],
   module: {
     rules: [
@@ -32,7 +34,7 @@ module.exports = {
             loader: 'file-loader',
             options: {
               name: '[name].[ext]',
-              outputPath: './assets/images/'
+              outputPath: './assets/img/'
             }
           }
         ]
@@ -51,7 +53,7 @@ module.exports = {
       //         }
       //       }
       //   },
-        // ],        
+      // ],
       // },
       // fonts
       {
