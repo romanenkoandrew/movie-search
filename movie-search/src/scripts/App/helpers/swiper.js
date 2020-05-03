@@ -2,8 +2,9 @@ import Swiper from 'swiper'
 
 const mySwiper = new Swiper('.swiper-container', {
   slidesPerView: 1,
-  spaceBetween: 5,
-  loop: true,
+  spaceBetween: 50,
+  observer: true,
+  initialSlide: 0,
   keyboard: {
     enabled: true
   },
