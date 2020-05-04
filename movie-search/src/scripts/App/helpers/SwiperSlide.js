@@ -53,7 +53,11 @@ class SwiperSlide {
     title[this.index].innerText = this.title
 
     const poster = this.swiperWrapper.querySelectorAll('.card-image')
-    poster[this.index].style.backgroundImage = `url(${this.poster})`
+    if (this.poster !== 'N/A') {
+      poster[this.index].style.backgroundImage = `url(${this.poster})`
+    } else {
+      poster[this.index].style.backgroundImage = `url(assets/img/noImage.jpg)`
+    }
 
     const year = this.swiperWrapper.querySelectorAll('.data')
     year[this.index].innerText = this.year

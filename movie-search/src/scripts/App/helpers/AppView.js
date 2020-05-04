@@ -8,12 +8,9 @@ class AppView {
   }
 
   render() {
-    // console.log('AppView data:', this.data)
-    console.log('AppView rating:', this.rating)
     mySwiper.removeAllSlides()
     mySwiper.updateSlides()
     for (let i = 0; i < this.data.length; i += 1) {
-      console.log('cycle:', this.data[i])
       const swiperSlide = new SwiperSlide(this.data[i], this.rating[i], i)
       swiperSlide.addSlides()
     }

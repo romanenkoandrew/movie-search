@@ -12,7 +12,6 @@ class App {
   async start() {
     const model = new AppModel(this.state)
     const data = await model.getData()
-    // console.log('start:', data)
     const rating = await model.extractClipRating(data)
 
     const view = new AppView(data, rating)
