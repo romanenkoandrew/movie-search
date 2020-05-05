@@ -10,12 +10,17 @@ class App {
   }
 
   async start() {
-    const model = new AppModel(this.state)
-    const data = await model.getData()
-    const rating = await model.extractClipRating(data)
-
-    const view = new AppView(data, rating)
-    view.render()
+    try {
+      const model = new AppModel(this.state)
+      const data = await model.getData()
+      if (data) {
+        const rating = await model.extractClipRating(data)
+        const view = new AppView(data, rating)
+        view.render()
+      }
+    } catch (err) {
+      throw Error(err)
+    }
   }
 }
 
