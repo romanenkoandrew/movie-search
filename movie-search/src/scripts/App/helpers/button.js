@@ -13,7 +13,7 @@ const appStart = () => {
   }
 }
 
-const searchStart = () => {
+const searchStartHandler = () => {
   searchButton.addEventListener('click', () => {
     appStart()
   })
@@ -25,4 +25,4 @@ const searchStart = () => {
   })
 }
 
-export default searchStart
+export default searchStartHandler

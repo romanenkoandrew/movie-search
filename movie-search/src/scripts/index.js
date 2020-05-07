@@ -1,7 +1,7 @@
-import mySwiper from './App/helpers/swiper'
-import searchStart from './App/helpers/button'
+import mySwiper from './App/helpers/Swiper'
+import searchStartHandler from './App/helpers/button'
 
 document.addEventListener('DOMContentLoaded', () => {
   mySwiper.init()
-  searchStart()
+  searchStartHandler()
 })

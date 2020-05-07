@@ -1,5 +1,5 @@
 import SwiperSlide from './SwiperSlide'
-import mySwiper from './swiper'
+import mySwiper from './Swiper'
 
 class AppView {
   constructor(data, rating) {

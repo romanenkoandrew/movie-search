@@ -1,7 +1,7 @@
 const searchInput = document.getElementById('search-input')
 const messageBlock = document.getElementById('message-block')
 const message = document.createElement('span')
-message.classList.add('h2', 'text-danger')
+message.classList.add('h3', 'text-danger')
 
 const getMessage = error => {
   message.innerText = `Something went wrong: ${error}`
@@ -19,4 +19,17 @@ const responseFalse = data => {
   messageBlock.appendChild(message)
 }
 
-export { getMessage, responseFalse }
+const createSpinner = () => {
+  const spinner = document.createElement('div')
+  spinner.classList.add('spinner-border')
+  spinner.role = 'status'
+  messageBlock.append(spinner)
+}
+
+const spinnerLoading = param => {
+  return param
+    ? messageBlock.childNodes.forEach(el => el.remove())
+    : createSpinner()
+}
+
+export { getMessage, responseFalse, spinnerLoading }

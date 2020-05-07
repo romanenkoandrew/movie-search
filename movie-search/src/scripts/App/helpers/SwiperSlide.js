@@ -1,4 +1,4 @@
-import mySwiper from './swiper'
+import mySwiper from './Swiper'
 
 class SwiperSlide {
   constructor(params, rating, index) {
@@ -12,31 +12,6 @@ class SwiperSlide {
   }
 
   addSlides() {
-    // console.log('swiperslide:', this.title, this.rating)
-    // const swiperSlide = document.createElement('div')
-    // swiperSlide.classList.add('swiper-slide')
-
-    // const link = document.createElement('a')
-    // link.href = `https://www.imdb.com/title/${this.id}`
-    // const title = document.createElement('h2')
-    // title.innerText = this.title
-    // link.appendChild(title)
-
-    // const poster = document.createElement('div')
-    // poster.classList.add('card-image')
-    // poster.style.backgroundImage = `url(${this.poster})`
-
-    // const year = document.createElement('h3')
-    // year.classList.add('data', 'mb-0')
-    // year.innerText = this.year
-
-    // const rating = document.createElement('h3')
-    // rating.classList.add('mb-5')
-    // rating.innerText = this.rating
-
-    // swiperSlide.append(link, poster, year, rating)
-    // this.swiperWrapper.append(swiperSlide)
-
     mySwiper.appendSlide(
       `<div class="swiper-slide">
         <a href="" target = "_blank"> <h2 class="film-name"></h2> </a>
