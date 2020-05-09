@@ -22,6 +22,7 @@ class App {
         const rating = await model.extractClipRating(data)
         const view = new AppView(data, rating)
         view.render()
+        view.renderFinishMessage()
       }
       isLoading = true
       spinnerLoading(isLoading)

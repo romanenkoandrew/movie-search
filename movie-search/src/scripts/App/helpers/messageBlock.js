@@ -52,6 +52,7 @@ const spinnerLoading = param => {
 }
 
 export {
+  messageClear,
   getMessageError,
   getMessageLoading,
   getMessageTranslate,
