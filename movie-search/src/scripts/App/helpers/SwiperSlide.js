@@ -22,7 +22,9 @@ class SwiperSlide {
     )
     const link = this.swiperWrapper.querySelectorAll('a')
     // console.log('link:', link)
-    link[this.index].href = `https://www.imdb.com/title/${this.id}`
+    link[
+      this.index
+    ].href = `https://www.imdb.com/title/${this.id}/videogallery/`
 
     const title = this.swiperWrapper.querySelectorAll('h2')
     title[this.index].innerText = this.title
