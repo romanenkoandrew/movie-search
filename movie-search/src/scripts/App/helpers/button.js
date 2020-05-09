@@ -1,15 +1,17 @@
 import App from '../App'
+import { getMessageLoading } from './messageBlock'
+import { requestInRussian } from './requestInRussian'
 
 const searchButton = document.getElementById('button-addon2')
 const searchInput = document.getElementById('search-input')
-const messageBlock = document.getElementById('message-block')
 
-const appStart = () => {
+const appStart = async () => {
   const searchInputValue = searchInput.value
   if (searchInputValue) {
-    const app = new App(searchInputValue)
+    const translateValue = await requestInRussian(searchInputValue)
+    const app = new App(translateValue)
     app.start()
-    messageBlock.querySelectorAll('span').forEach(el => el.remove())
+    getMessageLoading(translateValue)
   }
 }
 

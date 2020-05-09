@@ -1,11 +1,29 @@
 const searchInput = document.getElementById('search-input')
 const messageBlock = document.getElementById('message-block')
-const message = document.createElement('span')
-message.classList.add('h3', 'text-danger')
 
-const getMessage = error => {
-  message.innerText = `Something went wrong: ${error}`
-  messageBlock.appendChild(message)
+const message = (text, color) => {
+  const messageElem = document.createElement('span')
+  messageElem.classList.add('h3')
+  messageElem.innerText = `${text}`
+  messageElem.classList.add(color)
+  messageBlock.appendChild(messageElem)
+}
+
+const messageClear = () => {
+  messageBlock.querySelectorAll('span').forEach(el => el.remove())
+}
+
+const getMessageError = error => {
+  messageClear()
+  message(`Something went wrong: ${error}`, 'text-danger')
+}
+const getMessageLoading = value => {
+  messageClear()
+  message(`Loading results for ${value}`, 'text-secondary')
+}
+const getMessageTranslate = value => {
+  messageClear()
+  message(`Showing results for ${value}`, 'text-success')
 }
 
 const errorText = {
@@ -15,8 +33,9 @@ const errorText = {
 
 const responseFalse = data => {
   const { Error } = data
-  message.innerText = errorText[Error] + searchInput.value
-  messageBlock.appendChild(message)
+  const messageText = errorText[Error] + searchInput.value
+  messageClear()
+  message(messageText, 'text-danger')
 }
 
 const createSpinner = () => {
@@ -32,4 +51,10 @@ const spinnerLoading = param => {
     : createSpinner()
 }
 
-export { getMessage, responseFalse, spinnerLoading }
+export {
+  getMessageError,
+  getMessageLoading,
+  getMessageTranslate,
+  responseFalse,
+  spinnerLoading
+}

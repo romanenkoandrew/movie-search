@@ -1,4 +1,4 @@
-import { getMessage, responseFalse } from './messageBlock'
+import { getMessageError, responseFalse } from './messageBlock'
 
 class AppModel {
   constructor(state) {
@@ -16,7 +16,7 @@ class AppModel {
       }
       return data
     } catch (err) {
-      return getMessage(err)
+      return getMessageError(err)
     }
   }
 
@@ -28,7 +28,7 @@ class AppModel {
       const rating = await ratingObj.imdbRating
       return rating
     } catch (err) {
-      return getMessage(err)
+      return getMessageError(err)
     }
   }
 
