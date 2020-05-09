@@ -38,11 +38,7 @@ class SwiperSlide {
     year[this.index].innerText = this.year
 
     const rating = this.swiperWrapper.querySelectorAll('.star-rating')
-    if (this.rating !== 'N/A') {
-      rating[this.index].innerText = this.rating
-    } else {
-      rating[this.index].innerText = 'No rating, sorry'
-    }
+    rating[this.index].innerText = this.rating
     mySwiper.slideTo(0)
     mySwiper.updateSlides()
   }
