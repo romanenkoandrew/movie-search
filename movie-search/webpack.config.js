@@ -20,8 +20,17 @@ module.exports = {
       }
     ])
   ],
+  devtool: 'source-map',
   module: {
     rules: [
+      { enforce: 'pre', test: /\.js$/, loader: 'eslint-loader' },
+      {
+        test: /\.js$/,
+        exclude: /(node_modules)/,
+        use: {
+          loader: 'babel-loader'
+        }
+      },
       {
         test: /\.(scss|css)$/,
         use: ['style-loader', 'css-loader', 'sass-loader']
@@ -39,22 +48,6 @@ module.exports = {
           }
         ]
       },
-      // {
-      //   test: /\.html$/,
-      //   use: [
-      //     'file-loader?name=[path][name].[ext]',
-      //     'extract-loader',
-      //     {
-      //       loader: 'html-loader',
-      //       options: {
-
-      //         attributes: {
-      //           root: './'
-      //         }
-      //       }
-      //   },
-      // ],
-      // },
       // fonts
       {
         test: /.(ttf|otf|eot|woff(2)?)(\?[a-z0-9]+)?$/,
