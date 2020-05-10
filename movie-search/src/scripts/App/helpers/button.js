@@ -19,8 +19,7 @@ const searchStartHandler = () => {
   searchButton.addEventListener('click', () => {
     appStart()
   })
-  document.addEventListener('keydown', event => {
-    const { code } = event
+  document.addEventListener('keydown', ({ code }) => {
     if (code === 'Enter') {
       appStart()
     }

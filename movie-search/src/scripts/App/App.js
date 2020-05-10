@@ -6,16 +6,13 @@ class App {
   constructor(value) {
     this.state = {
       url: `https://www.omdbapi.com/?apikey=1ee841cf&s=${value}`,
-      ratingUrl: `https://www.omdbapi.com/?apikey=1ee841cf&i=`,
-      isLoading: true
+      ratingUrl: `https://www.omdbapi.com/?apikey=1ee841cf&i=`
     }
   }
 
   async start() {
     try {
-      let { isLoading } = this.state
-      isLoading = false
-      spinnerLoading(isLoading)
+      spinnerLoading(false)
       const model = new AppModel(this.state)
       const data = await model.getData()
       if (data) {
@@ -24,8 +21,7 @@ class App {
         view.render()
         view.renderFinishMessage()
       }
-      isLoading = true
-      spinnerLoading(isLoading)
+      spinnerLoading(true)
     } catch (err) {
       throw Error(err)
     }

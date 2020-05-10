@@ -32,8 +32,8 @@ class AppModel {
     }
   }
 
-  extractClipRating(data) {
-    const imdbIdArr = data.Search.map(items => items.imdbID)
+  extractClipRating({ Search }) {
+    const imdbIdArr = Search.map(items => items.imdbID)
     const rating = imdbIdArr.map(items => this.getRating(items))
     return Promise.all(rating)
   }

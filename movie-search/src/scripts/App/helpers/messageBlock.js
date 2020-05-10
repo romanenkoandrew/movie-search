@@ -31,8 +31,7 @@ const errorText = {
   'Too many results.': 'Too many results. Please correct your request: '
 }
 
-const responseFalse = data => {
-  const { Error } = data
+const responseFalse = ({ Error }) => {
   const messageText = errorText[Error] + searchInput.value
   messageClear()
   message(messageText, 'text-danger')
