@@ -19,7 +19,7 @@ class AppView {
   }
 
   renderFinishMessage() {
-    dataInRussian(this.searchInput.value)
+    if (this.searchInput.value) dataInRussian(this.searchInput.value)
   }
 }
 
